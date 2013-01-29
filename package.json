@@ -9,17 +9,10 @@
     "url": "git@github.com:BusyRich/node-uber-rand.git"
   },
   "dependencies": {
-    "optimist": "0.3.x",
-    "request": "2.12.x",
-    "colors": "0.6.x"
+    "request": "2.12.x"
   },
-  "devDependencies": {},
-  "optionalDependencies": {},
   "engines": {
     "node": ">= v0.6.12"
-  },
-  "bin": {
-    "qrand": "./test/get-qrand.js"
   },
   "main": "./lib/uberrand"
 }
