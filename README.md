@@ -1,34 +1,39 @@
-# node-qrand
+<pre>
+ _     _ ______  _______ ______  _______ _______ ______  
+(_)   (_|____  \(_______|_____ \(_______|_______|______) 
+ _     _ ____)  )_____   _____) )_______ _     _ _     _ 
+| |   | |  __  (|  ___) |  __  /|  ___  | |   | | |   | |
+| |___| | |__)  ) |_____| |  \ \| |   | | |   | | |__/ / 
+ \_____/|______/|_______)_|   |_|_|   |_|_|   |_|_____/  
+  Uberand
+</pre>
 
 ## A quantum random number generator for node.js.
-Gets N-length random numbers from the ANU Quantum Random Number Generator
-See here for more info: [http://photonics.anu.edu.au/qoptics/Research/qrng.php](http://photonics.anu.edu.au/qoptics/Research/qrng.php)
+A wrapper of Chris Bumgardner's qrand ([https://github.com/cbumgard/node-qrand](https://github.com/cbumgard/node-qrand)) with some added functionality.
 
-## Installation (Global)
+## Caching
+Instead of making a request each time you need a random number, a cache of 1000 (by default) random octets is kept and used when retieving random numbers. When the cache runs out, new octets are retrieved. This quickens processing by cutting down on network requests.
 
-`npm install -g qrand`
+To change the amount added to the cache with each request (max 1024), simply change *uberand.cacheSize*.
 
-Then try it out by running:
+## Usage
+### uberand.hex(size,callback)
+Retrieves a hexadecial of the octet length *size*.
 
-`qrand -l 16`
+    uberand.hex(4, function(err, hex) { 
+      //hex = 8cf507d3
+    });
 
-Which should output something 32 random hex characters (16 octets):
+###uberand.int(bits,callback)
+Retrieves an integer value of bit size *bits*. Valid bit sizes are 8, 16, and 32.
 
-`028251ba71420a4b8b0a343333b7445a`
+    uberand.int(32, function(err, num) { 
+      //num = 1735374832
+    });
 
-## Using as a Library
+###uberand.percent(callback)
+Retrieves a value between 0 and 1, with 2 points of percision.
 
-Add to your project's package.json dependency array:
-
-    "dependencies": {
-      "qrand": "0.1.x"
-    }
-
-Then run `npm install`
-
-From your project you can now use this library as follows:
-
-    var qrand = require('qrand');
-    qrand.getRandomHexOctets(16, function(err, octets) {
-      console.log(octets.join(''));
+    uberand.int(function(err, per) { 
+      //per = 0.31
     });
