@@ -1,16 +1,15 @@
 {
-  "author": "Chris Bumgardner <cbumgard@gmail.com>",
-  "name": "qrand",
-  "description": "A quantum random number generator for node.js.",
-  "version": "0.1.2",
-  "homepage": "https://github.com/cbumgard/node-qrand",
+  "author": "Richard Key <rich@busyrich.com>",
+  "name": "uberand",
+  "description": "A wrapper for the quantum random number generator by Chris Bumgardner (@chrisbumgardner).",
+  "version": "0.0.1",
+  "homepage": "https://github.com/BusyRich/node-uber-rand",
   "repository": {
     "type": "git",
-    "url": "git@github.com:cbumgard/node-qrand.git"
+    "url": "git@github.com:BusyRich/node-uber-rand.git"
   },
   "dependencies": {
     "optimist": "0.3.x",
-    "async": "0.1.x",
     "request": "2.12.x",
     "colors": "0.6.x"
   },
