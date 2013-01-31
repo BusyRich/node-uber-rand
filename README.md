@@ -34,6 +34,6 @@ Retrieves an integer value of bit size *bits*. Valid bit sizes are 8, 16, and 32
 ###uberand.percent(callback)
 Retrieves a value between 0 and 1, with 2 points of percision.
 
-    uberand.int(function(err, per) { 
+    uberand.percent(function(err, per) { 
       //per = 0.31
     });
