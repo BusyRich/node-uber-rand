@@ -9,10 +9,14 @@
     "url": "git@github.com:BusyRich/node-uber-rand.git"
   },
   "dependencies": {
-    "request": "2.12.x"
+    "request": "2.12.x",
+    "vows": "~0.7.0"
   },
   "engines": {
     "node": ">= v0.6.12"
+  },
+  "scripts": {
+    "test": "node test.js"
   },
   "main": "./lib/uberrand"
 }
